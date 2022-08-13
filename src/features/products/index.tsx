@@ -26,3 +26,6 @@ export const $card = createStore<Product[]>([]).on(
 )
 
 $card.watch((data) => console.log(data))
+
+
+
