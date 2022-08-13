@@ -1,6 +1,6 @@
 import './App.css'
-import { $products } from '../features/api'
-import { productAdded } from '../features/products'
+import { $products } from '@/features/api'
+import { productAdded } from '@/features/products'
 
 import { useList } from 'effector-react'
 
