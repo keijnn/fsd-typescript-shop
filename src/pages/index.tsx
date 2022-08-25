@@ -11,10 +11,11 @@ export const Routing = () => (
   <BrowserRouter>
     <Header />
     <Routes>
-      <Route path="*" element={<Navigate to={'404'} />} />
       <Route path="shop" element={<Shop />} />
       <Route path="basket" element={<Basket />} />
       <Route path="404" element={<PageNotFound />} />
+      <Route path="*" element={<Navigate to={'404'} />} />
+      <Route path="/" element={<Navigate to={'shop'} />} />
     </Routes>
   </BrowserRouter>
 )

@@ -1,3 +1,13 @@
-const url = 'https://fakestoreapi.com/products'
+import { createEffect, restore } from "effector"
+import { Product } from "./types"
 
-export const getProducts = () => fetch(url).then((res) => res.json())
+export const getProductsFx = createEffect(async () => {
+    const url = 'https://fakestoreapi.com/products'
+    const request = await fetch(url)
+    if (!request.ok) throw request
+    return request.json()
+})
+
+export const $products = restore<Product[]>(getProductsFx, [])
+
+getProductsFx()
