@@ -1,6 +1,4 @@
 //import modules
-import clsx from 'clsx'
-import { useLocation } from 'react-router-dom'
 import { NavigationLink } from './link'
 
 //import icons
@@ -14,7 +12,7 @@ export const Header = () => {
       </div>
       <nav className="text-white">
         <NavigationLink url="/shop" label="Shop" className="mr-20" />
-        <NavigateLink url="/basket" label="Basket" />
+        <NavigationLink url="/basket" label="Basket" />
       </nav>
     </header>
   )
