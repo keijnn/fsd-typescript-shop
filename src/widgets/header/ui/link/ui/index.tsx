@@ -14,9 +14,9 @@ export const NavigationLink = ({ url, label, className }: NavigationLinkProps) =
     <>
       <Link
         className={clsx(
-          'text-xl hover:text-blue-200',
+          'text-xl hover:text-gray-700',
           {
-            ['text-blue-200']: activeUrl.pathname === url,
+            ['text-gray-700']: activeUrl.pathname === url,
           },
           className
         )}
