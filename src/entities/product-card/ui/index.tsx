@@ -8,7 +8,7 @@ import { AddProductToBasket } from '@/features/add-product-to-basket'
 import { ProductProps } from './types'
 
 export const ProductCard = (product: ProductProps) => {
-  const { id, title, category, price, count, className } = product
+  const { title, category, price, className } = product
   return (
     <div
       className={clsx(
@@ -21,16 +21,7 @@ export const ProductCard = (product: ProductProps) => {
         <p>{category}</p>
         <p>{price} $</p>
       </div>
-      <AddProductToBasket
-        product={product}
-      />
+      <AddProductToBasket product={product} />
     </div>
   )
 }
-
-
-// id = { id }
-// title = { title }
-// category = { category }
-// price = { price }
-// count = { count }

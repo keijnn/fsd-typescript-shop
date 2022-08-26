@@ -3,6 +3,6 @@ export interface ProductProps {
   title: string
   category: string
   price: number
-  count: number
+  count?: number
   className?: string
 }

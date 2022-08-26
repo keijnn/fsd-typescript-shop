@@ -1,26 +1,20 @@
 //import modules
-import { Product } from '@/shared/api/products'
 import clsx from 'clsx'
 
 interface ButtonProps {
   label: string
   className?: string
-  onCLick?(): void
+  onClick?(): void
 }
 
-export const Button = ({ label, className }: ButtonProps) => {
-
-  return (
-    <button
-      className={clsx(
-        'bg-white text-lg rounded-lg hover:bg-blue-200 active:bg-blue-300',
-        className
-      )}
-    >
-      {label}
-    </button>
-  )
-}
-
-
-
+export const Button = ({ label, className, onClick }: ButtonProps) => (
+  <button
+    onClick={onClick}
+    className={clsx(
+      'bg-white text-lg rounded-lg p-1 hover:bg-blue-200 active:bg-blue-300',
+      className
+    )}
+  >
+    {label}
+  </button>
+)
