@@ -1,9 +1,7 @@
-import { Store } from "@/widgets/store"
+import { Store } from '@/widgets/store'
 
-export const Shop = () => {
-    return (
-        <>
-            <Store />
-        </>
-    )
-}
+export const Shop = () => (
+  <>
+    <Store />
+  </>
+)

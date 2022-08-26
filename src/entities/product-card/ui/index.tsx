@@ -1,19 +1,20 @@
 //import modules
-import { Button } from '@/shared/ui/button'
 import clsx from 'clsx'
 
-interface ProductProps {
-  title: string
-  description?: string
-  category: string
-  price: number
-  rating?: { rate: number; count: number }
-  className?: string
-}
+//import components
+import { AddProductToBasket } from '@/features/add-product-to-basket'
 
-export const ProductCard = (props: ProductProps) => {
-  const { title, category, price, className } = props
+//types
+import { ProductProps } from './types'
 
+export const ProductCard = ({
+  id,
+  title,
+  category,
+  price,
+  count,
+  className,
+}: ProductProps) => {
   return (
     <div
       className={clsx(
@@ -26,7 +27,13 @@ export const ProductCard = (props: ProductProps) => {
         <p>{category}</p>
         <p>{price} $</p>
       </div>
-      <Button label="Add to basket" className="p-1 text-gray-800" />
+      <AddProductToBasket
+        id={id}
+        title={title}
+        category={category}
+        price={price}
+        count={count}
+      />
     </div>
   )
 }

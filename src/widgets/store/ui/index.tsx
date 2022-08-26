@@ -8,9 +8,11 @@ import { ProductCard } from '@/entities/product-card'
 export const Store = () => {
   const productsList = useList($products, (product) => (
     <ProductCard
+      id={product.id}
       title={product.title}
       category={product.category}
       price={product.price}
+      count={1}
       className="h-60"
     />
   ))
