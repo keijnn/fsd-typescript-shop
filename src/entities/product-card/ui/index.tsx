@@ -7,14 +7,8 @@ import { AddProductToBasket } from '@/features/add-product-to-basket'
 //types
 import { ProductProps } from './types'
 
-export const ProductCard = ({
-  id,
-  title,
-  category,
-  price,
-  count,
-  className,
-}: ProductProps) => {
+export const ProductCard = (product: ProductProps) => {
+  const { id, title, category, price, count, className } = product
   return (
     <div
       className={clsx(
@@ -28,12 +22,15 @@ export const ProductCard = ({
         <p>{price} $</p>
       </div>
       <AddProductToBasket
-        id={id}
-        title={title}
-        category={category}
-        price={price}
-        count={count}
+        product={product}
       />
     </div>
   )
 }
+
+
+// id = { id }
+// title = { title }
+// category = { category }
+// price = { price }
+// count = { count }

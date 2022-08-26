@@ -4,10 +4,14 @@ import { productAdded } from "../model"
 //types
 import { ProductProps } from '@/entities/product-card'
 
-export const AddProductToBasket = (product: ProductProps) => {
+interface AddProductProps {
+  product: ProductProps
+}
+
+export const AddProductToBasket = ({product}: AddProductProps) => {
   return (
     <Button
-      buttonClicked={() => productAdded(product)}
+      onCLick={() => productAdded(product)}
       label="Add to basket"
       className="p-1"
     />

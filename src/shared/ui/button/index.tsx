@@ -5,14 +5,13 @@ import clsx from 'clsx'
 interface ButtonProps {
   label: string
   className?: string
-  buttonClicked?: () => Product
+  onCLick?(): void
 }
 
-export const Button = ({ label, className, buttonClicked }: ButtonProps) => {
+export const Button = ({ label, className }: ButtonProps) => {
 
   return (
     <button
-      onClick={buttonClicked}
       className={clsx(
         'bg-white text-lg rounded-lg hover:bg-blue-200 active:bg-blue-300',
         className
