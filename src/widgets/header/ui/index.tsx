@@ -12,7 +12,7 @@ export const Header = () => {
       </div>
       <nav className="font-semibold text-gray-500">
         <NavigationLink url="/shop" label="Shop" className="mr-20" />
-        <NavigationLink url="/basket" label="Basket" />
+        <NavigationLink url="/cart" label="Basket" />
       </nav>
     </header>
   )

@@ -4,5 +4,6 @@ export interface ProductProps {
   category: string
   price: number
   count?: number
+  index?: number
   className?: string
 }

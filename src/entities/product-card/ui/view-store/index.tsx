@@ -5,9 +5,9 @@ import clsx from 'clsx'
 import { AddProductToBasket } from '@/features/add-product-to-basket'
 
 //types
-import { ProductProps } from './types'
+import { ProductProps } from '../types'
 
-export const ProductCard = (product: ProductProps) => {
+export const ProductCardStore = (product: ProductProps) => {
   const { title, category, price, className } = product
   return (
     <div

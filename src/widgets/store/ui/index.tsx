@@ -1,16 +1,13 @@
 //import modules
-import { useList, useUnit } from 'effector-react'
+import { useList } from 'effector-react'
 
 //import components
 import { $products } from '@/shared/api/products'
-import { ProductCard } from '@/entities/product-card'
-import { $basket } from '@/entities/basket'
+import { ProductCardStore } from '@/entities/product-card'
 
 export const Store = () => {
-  const store = useUnit($basket)
-  console.log(store)
-  const productsList = useList($products, (product) => (
-    <ProductCard
+  const productsList = useList($products, (product, index) => (
+    <ProductCardStore
       id={product.id}
       title={product.title}
       category={product.category}

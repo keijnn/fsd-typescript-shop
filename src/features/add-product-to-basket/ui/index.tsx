@@ -14,4 +14,3 @@ export const AddProductToBasket = ({ product }: AddProductProps) => (
     label="Add to basket"
   />
 )
-

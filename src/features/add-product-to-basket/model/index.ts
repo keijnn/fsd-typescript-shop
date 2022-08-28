@@ -2,16 +2,16 @@
 import { createEvent } from 'effector'
 
 //import components
-import { $basket } from '@/entities/basket'
+import { $cart } from '@/entities/cart'
 
 //import types
 import { Product } from '@/shared/api/products'
 
 export const productAdded = createEvent<Product>()
 
-$basket.on(productAdded, (basket, product) => {
+$cart.on(productAdded, (cart, product) => {
   let modified = false
-  const duplicate:Product[] = basket.map((item) => {
+  const duplicate:Product[] = cart.map((item) => {
     if (item.id === product.id) {
       modified = true
       return { ...item, count: item.count + 1 }
