@@ -1,12 +1,14 @@
 //import modules
-import { useList } from 'effector-react'
+import { useList, useUnit } from 'effector-react'
 
 //import components
-import { $products } from '@/shared/api/products'
 import { ProductCardStore } from '@/entities/product-card'
+import { SearchProduct } from '@/features/search-product'
+import { $filteredProducts } from '@/features/search-product/model'
 
 export const Store = () => {
-  const productsList = useList($products, (product, index) => (
+
+  const productsList = useList($filteredProducts, (product) => (
     <ProductCardStore
       id={product.id}
       title={product.title}
@@ -18,9 +20,10 @@ export const Store = () => {
   return (
     <div
       style={{ maxHeight: 'calc(100% - 64px)' }}
-      className="overflow-auto"
+      className="overflow-auto p-4"
     >
-      <div className="p-4 grid grid-cols-4 gap-6">{productsList}</div>
+      <SearchProduct />
+      <div className="grid grid-cols-4 gap-6">{productsList}</div>
     </div>
   )
 }

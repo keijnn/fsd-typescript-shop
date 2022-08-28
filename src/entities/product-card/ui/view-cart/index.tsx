@@ -12,7 +12,6 @@ import {
 //types
 import { ProductProps } from '../types'
 
-
 export const ProductCardCart = (product: ProductProps) => {
   const { title, category, price, count, className } = product
   return (
