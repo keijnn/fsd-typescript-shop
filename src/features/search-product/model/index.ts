@@ -1,7 +1,13 @@
-import { Product } from '@/shared/api/products';
-import { restore } from 'effector';
+//import modules
+import { createEvent, sample, restore, createStore } from 'effector'
+
+//import models
 import { $products } from '@/shared/api/products'
-import { createEvent, sample, createStore } from 'effector'
+
+//import types
+import { Product } from '@/shared/api/products';
+
+
 
 export const productsFiltered = createEvent<string>()
 

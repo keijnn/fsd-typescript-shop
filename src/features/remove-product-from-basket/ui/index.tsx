@@ -1,4 +1,7 @@
+//import components
 import { Button } from '@/shared/ui/button'
+
+//import models
 import { productRemoved } from '../model'
 
 interface RemoveProductProps {

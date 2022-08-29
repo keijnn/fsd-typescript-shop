@@ -11,7 +11,7 @@ export const productAdded = createEvent<Product>()
 
 $cart.on(productAdded, (cart, product) => {
   let modified = false
-  const duplicate:Product[] = cart.map((item) => {
+  const duplicate: Product[] = cart.map((item) => {
     if (item.id === product.id) {
       modified = true
       return { ...item, count: item.count + 1 }
@@ -23,6 +23,3 @@ $cart.on(productAdded, (cart, product) => {
   }
   return duplicate
 })
-
-
-

@@ -1,5 +1,10 @@
+//import modules
 import { createEvent } from 'effector'
+
+//import models
 import { $cart } from '@/entities/cart'
+
+//import types
 import { Product } from '@/shared/api/products'
 
 const dropItem = (cart: Product[], index: number) =>

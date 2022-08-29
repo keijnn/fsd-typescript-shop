@@ -1,3 +1,4 @@
+//import routes
 import { Routing } from "@/pages";
 
 export const App = () => (

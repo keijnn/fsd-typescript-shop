@@ -1,6 +1,11 @@
-import { Input } from "@/shared/ui/input";
-import { useUnit } from "effector-react";
-import { $filter, productsFiltered } from "../model";
+//import modules
+import { useUnit } from 'effector-react'
+
+//import components
+import { Input } from '@/shared/ui/input'
+
+//import models
+import { $filter, productsFiltered } from '../model'
 
 export const SearchProduct = () => {
   const value = useUnit($filter)

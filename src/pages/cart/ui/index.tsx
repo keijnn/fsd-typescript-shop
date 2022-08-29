@@ -1,3 +1,4 @@
+//import components
 import { Cart } from "@/entities/cart"
 
 export const CartPage = () => {

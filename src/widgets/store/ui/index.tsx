@@ -3,17 +3,16 @@ import { useList, useUnit } from 'effector-react'
 
 //import components
 import { ProductCardStore } from '@/entities/product-card'
-import { SearchProduct } from '@/features/search-product'
-import { $filteredProducts } from '@/features/search-product/model'
 import { EmptyField } from '@/shared/ui/empty-field'
-import { productsSortedByName } from '@/features/sort-by-name/model'
+
+//import models
+import { SearchProduct } from '@/features/search-product'
+import { $filteredProducts } from '@/features/search-product'
 import { SortByName } from '@/features/sort-by-name'
 import { SortByPrice } from '@/features/sort-by-price'
-import { ClearSortingOptions } from '@/features/clear-sorting-options/ui'
+import { ClearSortingOptions } from '@/features/clear-sorting-options'
 
 export const Store = () => {
-  const prt = useUnit(productsSortedByName)
-  console.log(prt)
   const products = useUnit($filteredProducts)
   const productsList = useList($filteredProducts, (product) => (
     <ProductCardStore

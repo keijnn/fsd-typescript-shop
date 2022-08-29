@@ -1,4 +1,7 @@
+//import modules
 import { createEffect, restore } from "effector"
+
+//import types
 import { Product } from "./types"
 
 export const getProductsFx = createEffect(async () => {

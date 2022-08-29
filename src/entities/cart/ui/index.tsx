@@ -1,7 +1,12 @@
-import { ProductCardCart } from "@/entities/product-card"
+//import modules
+import { useList, useUnit } from 'effector-react'
+
+//import components
+import { ProductCardCart } from '@/entities/product-card'
+import { EmptyField } from '@/shared/ui/empty-field'
+
+//import model
 import { $cart } from '../model'
-import { useList, useUnit } from "effector-react"
-import { EmptyField } from "@/shared/ui/empty-field"
 
 export const Cart = () => {
   const cart = useUnit($cart)

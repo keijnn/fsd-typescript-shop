@@ -1,7 +1,10 @@
+//import components
 import { Button } from '@/shared/ui/button'
+
+//import model
 import { productAdded } from '../model'
 
-//types
+//import types
 import { ProductProps } from '@/entities/product-card'
 
 interface AddProductProps {

@@ -5,8 +5,7 @@ import clsx from 'clsx'
 import { RemoveProductFromBasket } from '@/features/remove-product-from-basket'
 import { ChangeProductQuantity } from '@/features/change-product-quantity'
 
-
-//types
+//import types
 import { ProductProps } from '../types'
 
 export const ProductCardCart = (product: ProductProps) => {
@@ -23,15 +22,8 @@ export const ProductCardCart = (product: ProductProps) => {
         <p className="ml-6 w-48">{category}</p>
         <p>{count}</p>
         <div>
-          <ChangeProductQuantity
-            id={product.id}
-            className="mr-6"
-            label="+"
-          />
-          <ChangeProductQuantity
-            id={product.id}
-            label="-"
-          />
+          <ChangeProductQuantity id={product.id} className="mr-6" label="+" />
+          <ChangeProductQuantity id={product.id} label="-" />
         </div>
         <p className="mr-6 w-20">{price} $</p>
       </div>

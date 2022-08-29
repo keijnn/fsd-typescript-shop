@@ -1,10 +1,11 @@
-import { Button } from '@/shared/ui/button'
-import {
-  productCountIncremented,
-  productCountDecremented,
-} from '@/features/change-product-quantity/model'
-
+//import modules
 import clsx from 'clsx'
+
+//import components
+import { Button } from '@/shared/ui/button'
+
+//import models
+import { productCountIncremented, productCountDecremented } from '../model'
 
 interface ChangeProductQuantityProps {
   id: number
