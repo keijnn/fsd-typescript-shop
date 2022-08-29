@@ -4,10 +4,7 @@ import clsx from 'clsx'
 //import components
 import { RemoveProductFromBasket } from '@/features/remove-product-from-basket'
 import { ChangeProductQuantity } from '@/features/change-product-quantity'
-import {
-  productCountDecremented,
-  productCountIncremented,
-} from '@/features/change-product-quantity/model'
+
 
 //types
 import { ProductProps } from '../types'
@@ -27,12 +24,12 @@ export const ProductCardCart = (product: ProductProps) => {
         <p>{count}</p>
         <div>
           <ChangeProductQuantity
-            onClick={() => productCountIncremented(product.id)}
+            id={product.id}
             className="mr-6"
             label="+"
           />
           <ChangeProductQuantity
-            onClick={() => productCountDecremented(product.id)}
+            id={product.id}
             label="-"
           />
         </div>

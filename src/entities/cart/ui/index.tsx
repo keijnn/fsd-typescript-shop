@@ -1,9 +1,11 @@
 import { ProductCardCart } from "@/entities/product-card"
 import { $cart } from '../model'
-import { useList } from "effector-react"
+import { useList, useUnit } from "effector-react"
+import { EmptyField } from "@/shared/ui/empty-field"
 
 export const Cart = () => {
-  const productsList = useList($cart, (product, index) => (
+  const cart = useUnit($cart)
+  const cartList = useList($cart, (product, index) => (
     <ProductCardCart
       id={product.id}
       index={index}
@@ -15,8 +17,12 @@ export const Cart = () => {
     />
   ))
   return (
-    <div style={{ maxHeight: 'calc(100% - 64px)' }} className="overflow-auto">
-      <div className="p-4 grid grid-cols-1 gap-6">{productsList}</div>
+    <div style={{ height: 'calc(100% - 64px)' }} className="overflow-auto">
+      {cart.length !== 0 ? (
+        <div className="p-4 grid grid-cols-1 gap-6">{cartList}</div>
+      ) : (
+        <EmptyField className="h-full" />
+      )}
     </div>
   )
 }

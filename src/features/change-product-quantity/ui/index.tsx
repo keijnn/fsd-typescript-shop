@@ -1,16 +1,27 @@
 import { Button } from '@/shared/ui/button'
+import {
+  productCountIncremented,
+  productCountDecremented,
+} from '@/features/change-product-quantity/model'
+
 import clsx from 'clsx'
 
 interface ChangeProductQuantityProps {
+  id: number
   label: string
   className?: string
-  onClick?: () => void
 }
 
 export const ChangeProductQuantity = ({
+  id,
   label,
   className,
-  onClick,
 }: ChangeProductQuantityProps) => (
-  <Button onClick={onClick} label={label} className={clsx('px-2', className)} />
+  <Button
+    onClick={() =>
+      label === '+' ? productCountIncremented(id) : productCountDecremented(id)
+    }
+    label={label}
+    className={clsx('px-2', className)}
+  />
 )

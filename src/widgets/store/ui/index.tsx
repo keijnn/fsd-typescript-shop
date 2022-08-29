@@ -5,9 +5,16 @@ import { useList, useUnit } from 'effector-react'
 import { ProductCardStore } from '@/entities/product-card'
 import { SearchProduct } from '@/features/search-product'
 import { $filteredProducts } from '@/features/search-product/model'
+import { EmptyField } from '@/shared/ui/empty-field'
+import { productsSortedByName } from '@/features/sort-by-name/model'
+import { SortByName } from '@/features/sort-by-name'
+import { SortByPrice } from '@/features/sort-by-price'
+import { ClearSortingOptions } from '@/features/clear-sorting-options/ui'
 
 export const Store = () => {
-
+  const prt = useUnit(productsSortedByName)
+  console.log(prt)
+  const products = useUnit($filteredProducts)
   const productsList = useList($filteredProducts, (product) => (
     <ProductCardStore
       id={product.id}
@@ -18,16 +25,16 @@ export const Store = () => {
     />
   ))
   return (
-    <div
-      style={{ maxHeight: 'calc(100% - 64px)' }}
-      className="overflow-auto p-4"
-    >
+    <div style={{ height: 'calc(100% - 64px)' }} className="overflow-auto p-4">
       <SearchProduct />
-      <div className="grid grid-cols-4 gap-6">{productsList}</div>
+      <SortByName />
+      <SortByPrice />
+      <ClearSortingOptions />
+      {products.length !== 0 ? (
+        <div className="grid grid-cols-4 gap-6">{productsList}</div>
+      ) : (
+        <EmptyField className="h-[70%]" />
+      )}
     </div>
   )
 }
-
-
-
-
