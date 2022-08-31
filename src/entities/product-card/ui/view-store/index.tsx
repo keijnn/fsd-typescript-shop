@@ -2,7 +2,7 @@
 import clsx from 'clsx'
 
 //import components
-import { AddProductToBasket } from '@/features/add-product-to-basket'
+import { AddProductToBasket } from '@/features/cart'
 
 //import types
 import { ProductProps } from '../types'

@@ -2,8 +2,8 @@
 import clsx from 'clsx'
 
 //import components
-import { RemoveProductFromBasket } from '@/features/remove-product-from-basket'
-import { ChangeProductQuantity } from '@/features/change-product-quantity'
+import { RemoveProductFromBasket } from '@/features/cart'
+import { ChangeProductQuantity } from '@/features/cart'
 
 //import types
 import { ProductProps } from '../types'

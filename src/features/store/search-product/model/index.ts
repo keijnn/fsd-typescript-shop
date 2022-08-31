@@ -7,8 +7,6 @@ import { $products } from '@/shared/api/products'
 //import types
 import { Product } from '@/shared/api/products';
 
-
-
 export const productsFiltered = createEvent<string>()
 
 export const $filteredProducts = createStore<Product[]>([])

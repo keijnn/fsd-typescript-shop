@@ -2,7 +2,7 @@
 import { createEvent, sample } from 'effector'
 
 //import models
-import { $filteredProducts } from '@/features/search-product'
+import { $filteredProducts } from '@/features/store'
 
 export const productsSortedByName = createEvent()
 

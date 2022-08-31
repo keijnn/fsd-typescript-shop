@@ -6,11 +6,11 @@ import { ProductCardStore } from '@/entities/product-card'
 import { EmptyField } from '@/shared/ui/empty-field'
 
 //import models
-import { SearchProduct } from '@/features/search-product'
-import { $filteredProducts } from '@/features/search-product'
-import { SortByName } from '@/features/sort-by-name'
-import { SortByPrice } from '@/features/sort-by-price'
-import { ClearSortingOptions } from '@/features/clear-sorting-options'
+import { SearchProduct } from '@/features/store'
+import { $filteredProducts } from '@/features/store'
+import { SortByName } from '@/features/store'
+import { SortByPrice } from '@/features/store'
+import { ClearSortingOptions } from '@/features/store'
 
 export const Store = () => {
   const products = useUnit($filteredProducts)
